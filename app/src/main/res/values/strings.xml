@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">AnimalInfo</string>
+    <string name="in_label_animal_type">Animal Type:</string>
+    <string name="in_label_animal_legs">How many appendages does one have:</string>
+    <string name="in_label_animal_terror">Is this a terrifying creature of the deep:</string>
+    <string name="in_label_animal_terror_lvl">HOW TERRIFYING??:</string>
+    <string name="in_label_animal_details">Extra Info:</string>
+    <string name="btn_submit">Submit</string>
+</resources>
