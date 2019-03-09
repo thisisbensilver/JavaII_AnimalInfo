@@ -1,15 +1,15 @@
 package com.thisisbensilver.animalinfo;
 
 import android.content.Intent;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.SeekBar;
-import android.widget.Toast;
 
+
+//Testing GitHub
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -55,9 +55,9 @@ public class MainActivity extends AppCompatActivity {
     public void showHideTerror(View view) {
 
         if (((CheckBox) view).isChecked()) {
-            findViewById(R.id.in_animal_terror_lvl).setVisibility(view.VISIBLE);
+            findViewById(R.id.in_animal_terror_lvl).setVisibility(View.VISIBLE);
         } else {
-            findViewById(R.id.in_animal_terror_lvl).setVisibility(view.GONE);
+            findViewById(R.id.in_animal_terror_lvl).setVisibility(View.GONE);
         }
 
     }
