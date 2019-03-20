@@ -31,6 +31,7 @@
             android:layout_height="wrap_content"
             android:padding="8dp"
             android:textColor="@color/header_txt"
+            android:freezesText="true"
             android:textSize="24sp" />
 
     </ScrollView>
