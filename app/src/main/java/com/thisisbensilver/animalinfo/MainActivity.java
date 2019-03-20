@@ -4,12 +4,9 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
-import android.widget.CheckBox;
-import android.widget.EditText;
-import android.widget.SeekBar;
+import android.widget.TextView;
 
 
-//Testing GitHub
 public class MainActivity extends AppCompatActivity {
 
     @Override
@@ -20,45 +17,36 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-    public void displayInfo(View view) {
 
-        Intent mIntent = new Intent(this, InfoActivity.class);
+    //Clicked on in Main
+    public void addAnimal(View view) {
 
-        String mType = ((EditText) findViewById(R.id.in_animal_type)).getText().toString();
-
-
-        int mLegs = 0;
-        if (!((EditText) findViewById(R.id.in_animal_legs)).getText().toString().equalsIgnoreCase("")) {
-            mLegs = Integer.parseInt((((EditText) findViewById(R.id.in_animal_legs)).getText().toString()));
-        }
+        Intent mIntent = new Intent(this, Activity_animalinfo.class);
 
 
-        boolean mTerror = ((CheckBox) findViewById(R.id.in_animal_terror)).isChecked();
-        int mTerrorLvl = 0;
-        if (mTerror) {
-            mTerrorLvl = ((SeekBar) findViewById(R.id.in_animal_terror_lvl_seekbar)).getProgress();
-        }
-        String mDetails = ((EditText) findViewById(R.id.in_animal_details)).getText().toString();
-
-
-        Animal myAnimal = new Animal(mType, mLegs, mTerror, mTerrorLvl, mDetails);
-
-        mIntent.putExtra("myAnimal", myAnimal);
 
         if (mIntent.resolveActivity(getPackageManager()) != null) {
-            startActivity(mIntent);
+            startActivityForResult(mIntent, Keys.req_Animal);
         }
 
     }
 
-    //Show/Hide the slider that only makes sense if the box is checked
-    public void showHideTerror(View view) {
 
-        if (((CheckBox) view).isChecked()) {
-            findViewById(R.id.in_animal_terror_lvl).setVisibility(View.VISIBLE);
-        } else {
-            findViewById(R.id.in_animal_terror_lvl).setVisibility(View.GONE);
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if (requestCode == Keys.req_Animal && resultCode == Keys.res_Animal) {
+
+            Animal myAnimal = (Animal) data.getSerializableExtra(Keys.ext_Animal);
+            updateList(myAnimal.toString());
+
         }
+    }
+
+    public void updateList(String a) {
+        View list = findViewById(R.id.txt_ListAll);
+
+        ((TextView) list).setText(((TextView) list).getText() + a + "\n\n");
 
     }
+
 }

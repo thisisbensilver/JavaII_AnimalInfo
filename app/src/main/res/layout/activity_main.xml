@@ -1,86 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bg"
     android:orientation="vertical"
     android:padding="24dp"
     tools:context=".MainActivity">
 
 
-    <EditText
-        android:id="@+id/in_animal_type"
+    <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:freezesText="true"
-        android:gravity="bottom"
-        android:hint="@string/in_label_animal_type"
-        android:inputType="text" />
+        android:layout_weight="1"
+        android:text="@string/txt_list_header"
+        android:textAlignment="center"
+        android:textColor="@color/header_txt"
+        android:textSize="32sp"
+        android:textStyle="bold" />
 
-    <EditText
-        android:id="@+id/in_animal_legs"
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:freezesText="true"
-        android:gravity="bottom"
-        android:hint="@string/in_label_animal_legs"
-        android:inputType="number" />
-
-    <CheckBox
-        android:id="@+id/in_animal_terror"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:checked="false"
-        android:freezesText="true"
-        android:hint="@string/in_label_animal_terror"
-        android:inputType="text"
-        android:onClick="showHideTerror" />
-
-    <LinearLayout
-        android:id="@+id/in_animal_terror_lvl"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:orientation="vertical"
-        android:visibility="invisible">
+        android:layout_weight="50"
+        android:background="@color/bg_embed">
 
         <TextView
-            android:id="@+id/in_animal_terror_lvl_textview"
+            android:id="@+id/txt_ListAll"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/in_label_animal_terror_lvl" />
+            android:padding="8dp"
+            android:textColor="@color/header_txt"
+            android:textSize="24sp" />
 
-        <SeekBar
-            android:id="@+id/in_animal_terror_lvl_seekbar"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:autofillHints="@string/in_label_animal_terror_lvl"
-            android:max="100"
-            android:progress="25" />
-    </LinearLayout>
+    </ScrollView>
 
-    <EditText
-        android:id="@+id/in_animal_details"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:freezesText="true"
-        android:gravity="top"
-        android:hint="@string/in_label_animal_details"
-        android:inputType="textMultiLine"
-        android:lines="20"
-        android:minLines="5" />
 
     <Button
         android:id="@+id/btn_submit"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
         android:layout_marginTop="24dp"
-        android:onClick="displayInfo"
-        android:text="@string/btn_submit" />
+        android:onClick="addAnimal"
+        android:text="@string/btn_addAnimal"
+        android:textSize="16sp" />
 
 </LinearLayout>
+

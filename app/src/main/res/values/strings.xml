@@ -1,9 +1,11 @@
 <resources>
-    <string name="app_name">AnimalInfo</string>
+    <string name="app_name">AnimalInfoV2</string>
     <string name="in_label_animal_type">Animal Type:</string>
     <string name="in_label_animal_legs">How many appendages does one have:</string>
     <string name="in_label_animal_terror">Is this a terrifying creature of the deep:</string>
     <string name="in_label_animal_terror_lvl">HOW TERRIFYING??:</string>
     <string name="in_label_animal_details">Extra Info:</string>
     <string name="btn_submit">Submit</string>
+    <string name="btn_addAnimal">Add Animal</string>
+    <string name="txt_list_header">ALL THE ANIMALS</string>
 </resources>
